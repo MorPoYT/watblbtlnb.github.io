@@ -1,0 +1,17 @@
+{
+  "name": "What About That Bird Lying by the Lake?",
+  "short_name": "Ozri",
+  "start_url": "./",
+  "display": "fullscreen",
+  "background_color": "#050607",
+  "theme_color": "#050607",
+  "orientation": "landscape",
+  "icons": [
+    {
+      "src": "assets/ui/menu_bird.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

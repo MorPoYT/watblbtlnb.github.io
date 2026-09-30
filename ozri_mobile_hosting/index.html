@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
+  <meta name="theme-color" content="#050607" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <title>What About That Bird Lying by the Lake?</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div id="game">
+  <div id="render"></div>
+  <div id="noise"></div>
+  <div id="scanlines"></div>
+  <div id="refresh"></div>
+  <div id="vignette"></div>
+  <div id="damage"></div>
+  <div id="sleep-fade"></div>
+  <div id="cinema-top"></div>
+  <div id="cinema-bottom"></div>
+  <div id="location-card" class="hidden"><small>ЛОКАЦИЯ</small><b id="location-name">ДОМ</b></div>
+  <div id="crosshair">+</div>
+
+  <section id="hud" class="hidden">
+    <div id="quest" class="panel">
+      <small>ТЕКУЩАЯ ЦЕЛЬ</small>
+      <b id="quest-title"></b>
+      <span id="quest-detail"></span>
+    </div>
+    <div id="day-card" class="panel"><span id="day-label" class="hidden"></span><span id="time-label">07:10</span></div>
+    <button id="audio-toggle" class="panel">♫ ЗВУК</button>
+    <button id="flashlight-toggle" class="panel">◉ СВЕТ</button>
+    <div id="prompt" class="panel hidden"><b>E</b><span id="prompt-text">Взаимодействовать</span></div>
+    <div id="held-item" class="hidden"><img id="held-icon" alt=""><span id="held-name"></span></div>
+  </section>
+
+  <section id="dialogue" class="hidden">
+    <div class="portrait-wrap"><img id="portrait" alt=""></div>
+    <div class="dialogue-copy">
+      <div id="speaker"></div>
+      <div id="dialogue-text"></div>
+      <div id="continue">E / ЛКМ / TAP</div>
+    </div>
+  </section>
+
+  <section id="inventory" class="modal hidden">
+    <div class="window book">
+      <div class="window-head"><div><small>РЮКЗАК</small><h2>Инвентарь</h2></div><button id="inventory-close">×</button></div>
+      <div id="inventory-grid"></div>
+      <p>I — открыть/закрыть · некоторые предметы используются автоматически.</p>
+    </div>
+  </section>
+
+  <section id="qte" class="modal hidden">
+    <div class="window qte-box">
+      <small id="qte-kicker">ПОМОГИ ОЗРИ</small>
+      <h2 id="qte-title">Обработка крыла</h2>
+      <p id="qte-description"></p>
+      <div id="qte-track"><div id="qte-zone"></div><div id="qte-marker"></div></div>
+      <div id="qte-count">1 / 4</div>
+      <button id="qte-button">НАЖАТЬ</button>
+    </div>
+  </section>
+
+  <section id="memory" class="modal hidden no-input">
+    <div class="memory-box"><small id="memory-kicker">ВОСПОМИНАНИЕ</small><div id="memory-text"></div></div>
+  </section>
+
+  <section id="title-screen" class="screen menu-screen">
+    <div class="menu-bg"></div><div class="menu-shade"></div><div class="menu-mist mist-a"></div><div class="menu-mist mist-b"></div>
+    <img class="menu-bird" src="assets/ui/menu_bird.png" alt="">
+    <div class="title-card menu-card">
+      <small>A SHORT FIRST-PERSON PSYCHOLOGICAL HORROR</small>
+      <h1>WHAT ABOUT THAT BIRD<br><em>LYING BY THE LAKE?</em></h1>
+      <img class="title-scratch" src="assets/ui/title_scratch.png" alt="">
+      <p class="menu-whisper">Иногда дом становится тише не потому, что все уснули.</p>
+      <button id="start"><span>ПРОСНУТЬСЯ</span></button>
+      <div class="controls">WASD — движение · мышь — обзор · E — действие · I — инвентарь · F — фонарь · Shift — быстрее<br>На телефоне: левый стик — ходьба, правая половина экрана — обзор.</div>
+    </div>
+  </section>
+
+  <section id="chapter-card" class="screen hidden no-input">
+    <div><small id="chapter-small"></small><h2 id="chapter-title"></h2><p id="chapter-subtitle"></p></div>
+  </section>
+
+  <section id="ending" class="screen hidden">
+    <div class="title-card ending-card">
+      <small>THE LAKE REMEMBERS</small>
+      <h1>WHAT ABOUT THAT BIRD<br><em>LYING BY THE LAKE, NOT BREATHING?</em></h1>
+      <p id="ending-copy"></p>
+      <button id="restart" class="ending-return">В МЕНЮ</button>
+    </div>
+  </section>
+
+  <div id="mobile" class="hidden">
+    <div id="stick"><div id="stick-knob"></div></div>
+    <button id="mobile-inventory">▣</button>
+    <button id="mobile-flashlight">☀</button>
+    <button id="mobile-action">E</button>
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.152.2/three.min.js"></script>
+<script src="game.js"></script>
+</body>
+</html>
