@@ -38,3 +38,13 @@ This folder is ready for static hosting. Upload its CONTENTS to a web root.
 - Netlify Drop: drag the whole folder into Netlify Drop.
 - GitHub Pages: put `index.html` in the repository root and enable Pages from `main / (root)`.
 - Mobile: landscape orientation is recommended. Tap the Start button once to unlock browser audio.
+
+## Mobile control hotfix
+
+- Touch-first virtual joystick with Pointer Events fallback.
+- True two-finger input: movement + camera look at the same time.
+- Hold `⇧` for sprint on mobile.
+- Handles `touchcancel`, lost focus and tab/background changes to prevent stuck movement.
+- Safe-area-aware control placement for notched phones.
+- Lower mobile internal render resolution/shadow map for steadier performance.
+- Three.js CDN fallback for hosted/mobile builds.
